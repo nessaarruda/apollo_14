@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+
+@astronaut_1 = Astronaut.create!(name: "Adam", age: 35, job: "Pilot")
+@astronaut_2 = Astronaut.create!(name: "Beatrix", age: 45, job: "Engineer")
+@astronaut_3 = Astronaut.create!(name: "Colton", age: 55, job: "Cook")
+@mission_1 = Mission.create!(title: "A", time_in_space: 10)
+@mission_2 = Mission.create!(title: "B", time_in_space: 15)
+@mission_3 = Mission.create!(title: "C", time_in_space: 20)
+AstronautMission.create!(mission_id: @mission_1.id, astronaut_id: @astronaut_1.id)
+AstronautMission.create!(mission_id: @mission_2.id, astronaut_id: @astronaut_1.id)
+AstronautMission.create!(mission_id: @mission_3.id, astronaut_id: @astronaut_1.id)
+AstronautMission.create!(mission_id: @mission_1.id, astronaut_id: @astronaut_2.id)
+AstronautMission.create!(mission_id: @mission_2.id, astronaut_id: @astronaut_2.id)
+AstronautMission.create!(mission_id: @mission_3.id, astronaut_id: @astronaut_2.id)
+AstronautMission.create!(mission_id: @mission_2.id, astronaut_id: @astronaut_3.id)
+AstronautMission.create!(mission_id: @mission_3.id, astronaut_id: @astronaut_3.id)

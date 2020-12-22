@@ -1,0 +1,12 @@
+<h1>All Astronauts</h1>
+<% @astronauts.each do |astro| %>
+<hr>
+  <h2>Name: <%= astro.name %></h2>
+  <h2>Age: <%= astro.age %></h2>
+  <h2>Job: <%= astro.job %></h2>
+  <h2>Missions: <% astro.list_missions.each do |mission| %></h2>
+    <%= mission.title %>
+    <% end %>
+  <h2>Total Time in Space: <%= astro.missions.space_time %></h2>
+  <% end %>
+<h3>Average Age: <%= @astronauts.average_age %></h3>
